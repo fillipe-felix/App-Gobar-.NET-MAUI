@@ -3,22 +3,61 @@
 <ContentPage
     x:Class="Gobar.Views.OnboardingPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:vm="clr-namespace:Gobar.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Grid
-        ColumnDefinitions="*"
-        Margin="0"
-        Padding="0"
-        RowDefinitions="*, 375">
-        <Image Grid.Row="0" Source="picture_on_1.png" />
-        <Border
-            BackgroundColor="#F99417"
-            Grid.Row="1"
-            StrokeShape="RoundRectangle 40,40,0,0">
-            <VerticalStackLayout VerticalOptions="Center">
-                <Label Text="Welcome Gobars" />
-                <Label Text="Find the best grooming experience in your city&#10; with just one tap! Don't miss out on the haircut&#10; or treatment of your dreams. Let's start now!" />
-            </VerticalStackLayout>
-        </Border>
-    </Grid>
 
+    <ContentPage.BindingContext>
+        <vm:OnboardingPageViewModel x:Key="OnboardingPageViewModel" />
+    </ContentPage.BindingContext>
+
+    <Grid RowDefinitions="*, 20, 80">
+        <CarouselView
+            BackgroundColor="White"
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            IndicatorView="indicatorView"
+            ItemsSource="{Binding CarouselItems}"
+            Margin="0">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="0" Padding="0">
+                        <Image
+                            HorizontalOptions="FillAndExpand"
+                            Margin="0"
+                            Source="{Binding ImageSource}"
+                            VerticalOptions="CenterAndExpand" />
+                        <Border
+                            BackgroundColor="#F99417"
+                            Margin="0"
+                            Padding="0"
+                            StrokeShape="RoundRectangle 40,40,0,0">
+                            <VerticalStackLayout
+                                HorizontalOptions="Center"
+                                Padding="25"
+                                Spacing="10"
+                                VerticalOptions="Start">
+                                <Label FontSize="24" Text="{Binding Title}" />
+                                <Label FontSize="14" Text="{Binding Description}" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <StackLayout BackgroundColor="#F99417" Grid.Row="1">
+            <IndicatorView
+                HorizontalOptions="Center"
+                IndicatorColor="White"
+                SelectedIndicatorColor="#363062"
+                VerticalOptions="End"
+                x:Name="indicatorView" />
+        </StackLayout>
+
+        <StackLayout BackgroundColor="#F99417" Grid.Row="2">
+            <Button
+                HorizontalOptions="Center"
+                Text="Get Started"
+                VerticalOptions="End" />
+        </StackLayout>
+    </Grid>
 </ContentPage>
