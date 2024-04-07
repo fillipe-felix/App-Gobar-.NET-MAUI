@@ -7,6 +7,6 @@
     xmlns:local="clr-namespace:Gobar.Views"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" Route="Onboarding" />
+    <ShellContent ContentTemplate="{DataTemplate local:ForgotPassword}" Route="Onboarding" />
 
 </Shell>
