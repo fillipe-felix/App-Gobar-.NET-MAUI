@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="Gobar.Views.RegisterPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <StackLayout Margin="20,60,20,0">
+        <VerticalStackLayout>
+            <Label Style="{StaticResource Display2}" Text="Register here " />
+            <Label Style="{StaticResource Body2}" Text="Please enter your data to complete your account registration process" />
+        </VerticalStackLayout>
+        <VerticalStackLayout Padding="0,15,0,15" Spacing="10">
+
+            <Label Style="{StaticResource SubHeadline3}" Text="Name" />
+            <Border Margin="0" Style="{StaticResource FormBorder}">
+                <HorizontalStackLayout>
+                    <Image HorizontalOptions="Start" Source="user.png" />
+                    <Entry
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="João da Silva"
+                        Style="{StaticResource Body3MidnightBlue}" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Label Style="{StaticResource SubHeadline3}" Text="Email" />
+            <Border Margin="0" Style="{StaticResource FormBorder}">
+                <HorizontalStackLayout>
+                    <Image HorizontalOptions="Start" Source="mail.png" />
+                    <Entry
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="email@teste.com"
+                        Style="{StaticResource Body3MidnightBlue}" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Label Style="{StaticResource SubHeadline3}" Text="Phone number" />
+            <Border Margin="0" Style="{StaticResource FormBorder}">
+                <HorizontalStackLayout>
+                    <Image HorizontalOptions="Start" Source="outgoing_call_rounded.png" />
+                    <Entry
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="(11) 99999-9999"
+                        Style="{StaticResource Body3MidnightBlue}" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Label Style="{StaticResource SubHeadline3}" Text="Create password" />
+            <Border Margin="0" Style="{StaticResource FormBorder}">
+                <HorizontalStackLayout>
+                    <Image HorizontalOptions="Start" Source="key_minimalistic.png" />
+                    <Entry
+                        IsPassword="True"
+                        Placeholder="********"
+                        Style="{StaticResource Body3MidnightBlue}" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Label Style="{StaticResource SubHeadline3}" Text="Confirm password" />
+            <Border Margin="0" Style="{StaticResource FormBorder}">
+                <HorizontalStackLayout>
+                    <Image HorizontalOptions="Start" Source="key_minimalistic.png" />
+                    <Entry
+                        IsPassword="True"
+                        Placeholder="********"
+                        Style="{StaticResource Body3MidnightBlue}" />
+                </HorizontalStackLayout>
+            </Border>
+
+
+            <VerticalStackLayout Margin="0,10,0,10" Spacing="10">
+                <Button HorizontalOptions="FillAndExpand" Text="Register" />
+
+                <Label
+                    HorizontalOptions="Center"
+                    LineBreakMode="WordWrap"
+                    Margin="10">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span
+                                FontAttributes="Bold"
+                                Text="Already have an account? "
+                                TextColor="#6B7280" />
+                            <Span
+                                FontAttributes="Bold"
+                                Text="Login"
+                                TextColor="#363062" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </StackLayout>
+</ContentPage>
