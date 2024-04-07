@@ -23,35 +23,39 @@
             Margin="0">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout Margin="0" Padding="0">
-                        <Image
-                            Aspect="AspectFill"
-                            HorizontalOptions="FillAndExpand"
-                            Margin="0"
-                            Source="{Binding ImageSource}"
-                            VerticalOptions="CenterAndExpand" />
-                        <Border
-                            BackgroundColor="#F99417"
-                            Margin="0"
-                            Padding="0"
-                            Stroke="#C49B33"
-                            StrokeShape="RoundRectangle 40,40,0,0"
-                            StrokeThickness="0">
-                            <VerticalStackLayout
-                                HorizontalOptions="Center"
-                                Padding="25"
-                                Spacing="10"
-                                VerticalOptions="Start">
-                                <Label FontSize="24" Text="{Binding Title}" />
-                                <Label FontSize="14" Text="{Binding Description}" />
-                            </VerticalStackLayout>
-                        </Border>
-                    </StackLayout>
+                    <Grid RowDefinitions="550, Auto">
+                        <StackLayout Grid.Row="0" Grid.RowSpan="2">
+                            <Image
+                                Aspect="AspectFill"
+                                HorizontalOptions="FillAndExpand"
+                                Margin="0"
+                                Source="{Binding ImageSource}"
+                                VerticalOptions="CenterAndExpand" />
+                        </StackLayout>
+                        <StackLayout Grid.Row="1">
+                            <Border
+                                BackgroundColor="{StaticResource Secondary900}"
+                                Margin="0"
+                                Padding="0"
+                                Stroke="#C49B33"
+                                StrokeShape="RoundRectangle 40,40,0,0"
+                                StrokeThickness="0">
+                                <VerticalStackLayout
+                                    HorizontalOptions="Center"
+                                    Padding="25"
+                                    Spacing="10"
+                                    VerticalOptions="Start">
+                                    <Label Style="{StaticResource HeadLine1}" Text="{Binding Title}" />
+                                    <Label Style="{StaticResource Body3}" Text="{Binding Description}" />
+                                </VerticalStackLayout>
+                            </Border>
+                        </StackLayout>
+                    </Grid>
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
         <StackLayout
-            BackgroundColor="#F99417"
+            BackgroundColor="{StaticResource Secondary900}"
             Grid.Row="1"
             Padding="0,10,0,0">
             <IndicatorView
@@ -63,16 +67,10 @@
         </StackLayout>
 
         <StackLayout
-            BackgroundColor="#F99417"
+            BackgroundColor="{StaticResource Secondary900}"
             Grid.Row="2"
             Padding="0,20,0,0">
-            <Button
-                FontSize="16"
-                HeightRequest="55"
-                HorizontalOptions="Center"
-                Text="Get Started"
-                VerticalOptions="End"
-                WidthRequest="340" />
+            <Button Text="Get Started" VerticalOptions="End" />
         </StackLayout>
     </Grid>
 </ContentPage>
