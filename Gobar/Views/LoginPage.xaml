@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="Gobar.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Grid
+        Margin="0"
+        Padding="0"
+        RowDefinitions="Auto, 100, *">
+        <StackLayout Grid.Row="0" Grid.RowSpan="2">
+            <Image
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Margin="0"
+                Source="background_login.png"
+                VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+        <StackLayout Grid.Row="1">
+            <Border
+                BackgroundColor="{StaticResource White}"
+                Margin="0"
+                Padding="0"
+                Stroke="#C49B33"
+                StrokeShape="RoundRectangle 40,40,0,0"
+                StrokeThickness="0">
+                <VerticalStackLayout Padding="25" VerticalOptions="Start">
+                    <Label Style="{StaticResource Display2}" Text="Welcome back 👋" />
+                    <Label Style="{StaticResource Body2}" Text="Please enter your login information below to access your account" />
+                </VerticalStackLayout>
+            </Border>
+        </StackLayout>
+        <VerticalStackLayout
+            Grid.Row="2"
+            Padding="20,40"
+            Spacing="10">
+
+            <Label Style="{StaticResource SubHeadline3}" Text="Username" />
+            <Border Margin="0" Style="{StaticResource FormBorder}">
+                <HorizontalStackLayout>
+                    <Image HorizontalOptions="Start" Source="mail.png" />
+                    <Entry HorizontalOptions="FillAndExpand" Placeholder="e-mail@teste.com" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Label Style="{StaticResource SubHeadline3}" Text="Password" />
+            <Border Margin="0" Style="{StaticResource FormBorder}">
+                <HorizontalStackLayout>
+                    <Image HorizontalOptions="Start" Source="key_minimalistic.png" />
+                    <Entry IsPassword="True" Placeholder="********" />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Label
+                HorizontalOptions="End"
+                Style="{StaticResource HeadLine5}"
+                Text="Forgot password?" />
+
+            <VerticalStackLayout Margin="10" Spacing="10">
+                <Button Text="Login" />
+
+                <Label
+                    HorizontalOptions="Center"
+                    LineBreakMode="WordWrap"
+                    Margin="10">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span
+                                FontAttributes="Bold"
+                                Text="Don't have an account? "
+                                TextColor="#6B7280" />
+                            <Span
+                                FontAttributes="Bold"
+                                Text="Register"
+                                TextColor="#363062" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
