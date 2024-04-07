@@ -3,7 +3,13 @@
 <ContentPage
     x:Class="Gobar.Views.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:vm="clr-namespace:Gobar.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentPage.BindingContext>
+        <vm:LoginPageViewModel x:Key="LoginPageViewModel" />
+    </ContentPage.BindingContext>
+
     <Grid
         Margin="0"
         Padding="0"
@@ -54,7 +60,11 @@
             <Label
                 HorizontalOptions="End"
                 Style="{StaticResource HeadLine5}"
-                Text="Forgot password?" />
+                Text="Forgot password?">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding GoToForgotPasswordPageCommand}" />
+                </Label.GestureRecognizers>
+            </Label>
 
             <VerticalStackLayout Margin="10" Spacing="10">
                 <Button Text="Login" />
@@ -72,7 +82,11 @@
                             <Span
                                 FontAttributes="Bold"
                                 Text="Register"
-                                TextColor="#363062" />
+                                TextColor="#363062">
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding GoToRegisterPageCommand}" />
+                                </Span.GestureRecognizers>
+                            </Span>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>

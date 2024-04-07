@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gobar.Views;
 
-public partial class ForgotPassword : ContentPage
+public partial class ForgotPasswordPage : ContentPage
 {
-    public ForgotPassword()
+    public ForgotPasswordPage()
     {
         InitializeComponent();
     }

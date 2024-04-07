@@ -3,6 +3,8 @@ using UIKit;
 using Foundation;
 #endif
 
+
+using Gobar.Views;
 #if ANDROID
 using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 #endif
@@ -16,7 +18,15 @@ public partial class App : Application
         InitializeComponent();
         RemoveBorders();
 
-        MainPage = new AppShell();
+        //Mostra essa tela apenas 1x
+        if (VersionTracking.IsFirstLaunchEver)
+        {
+            MainPage = new OnboardingPage();
+        }
+        else
+        {
+            MainPage = new AppShell();
+        }
     }
 
     public void RemoveBorders()

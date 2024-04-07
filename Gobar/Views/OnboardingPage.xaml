@@ -70,7 +70,10 @@
             BackgroundColor="{StaticResource Secondary900}"
             Grid.Row="2"
             Padding="0,20,0,0">
-            <Button Text="Get Started" VerticalOptions="End" />
+            <Button
+                Command="{Binding GoToLoginCommand}"
+                Text="Get Started"
+                VerticalOptions="End" />
         </StackLayout>
     </Grid>
 </ContentPage>

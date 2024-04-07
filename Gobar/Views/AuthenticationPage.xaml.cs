@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Gobar.Views;
 
-public partial class Authentication : ContentPage
+public partial class AuthenticationPage : ContentPage
 {
-    public Authentication()
+    public AuthenticationPage()
     {
         InitializeComponent();
         

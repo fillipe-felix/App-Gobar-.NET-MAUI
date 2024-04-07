@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+
 using Gobar.Models;
 
 namespace Gobar.ViewModels;
@@ -29,5 +31,11 @@ public partial class OnboardingPageViewModel : ObservableObject
             Title = "Everything in your hands", 
             Description = "With Gobar, find high-quality barbershops, see reviews, and make appointments easily. Achieve your confident appearance!"
         });
+    }
+
+    [RelayCommand]
+    private async Task GoToLogin()
+    {
+        await Shell.Current.GoToAsync("/Login");
     }
 }
