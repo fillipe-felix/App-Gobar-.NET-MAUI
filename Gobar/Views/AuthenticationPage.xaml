@@ -10,7 +10,6 @@
             <Label Style="{StaticResource Body2}" Text="Please enter the authentication code that we have sent to your email" />
         </VerticalStackLayout>
 
-
         <HorizontalStackLayout
             HorizontalOptions="Center"
             Margin="0,32,0,32"

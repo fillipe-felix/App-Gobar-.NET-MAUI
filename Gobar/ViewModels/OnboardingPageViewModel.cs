@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 using Gobar.Models;
+using Gobar.Views;
 
 namespace Gobar.ViewModels;
 
@@ -34,8 +35,8 @@ public partial class OnboardingPageViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private async Task GoToLogin()
+    private void GoToLogin()
     {
-        await Shell.Current.GoToAsync("/Login");
+        Application.Current.MainPage = new AppShell();
     }
 }

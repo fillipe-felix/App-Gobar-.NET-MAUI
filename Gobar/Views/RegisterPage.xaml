@@ -8,7 +8,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <ContentPage.BindingContext>
-        <vm:RegisterPageViewModel x:Key="RegisterPageViewModel" />
+        <vm:RegisterPageViewModel x:Name="RegisterPageViewModel" />
     </ContentPage.BindingContext>
 
     <StackLayout Margin="20,60,20,0">

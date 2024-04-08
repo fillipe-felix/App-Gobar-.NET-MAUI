@@ -12,10 +12,5 @@ public partial class LoginPage : ContentPage
     {
         InitializeComponent();
     }
-    
-    private void Button_Clicked(object sender, EventArgs e)
-    {
-        DisplayAlert("", "Hello World", "Cancel");
-    }
 }
 
